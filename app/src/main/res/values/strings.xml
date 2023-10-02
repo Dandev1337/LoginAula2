@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">login</string>
+    <string name="entrar">Entrar</string>
+    <string name="esqueci_minha_senha">Esqueci Minha Senha</string>
+    <string name="login">Login</string>
+    <string name="senha">Senha:</string>
+    <string name="loginemail">Login:</string>
+    <string name="background">background</string>
+</resources>
