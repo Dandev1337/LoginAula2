@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/backlogin"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
     <ImageView
         android:id="@+id/imageView3"
