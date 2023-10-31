@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.danieloliveira.login.R;
+import com.danieloliveira.login.dao.UserDAO;
+import com.danieloliveira.login.model.User;
 
 public class MainActivity2 extends AppCompatActivity {
     TextView txtEmail;
@@ -21,6 +23,10 @@ public class MainActivity2 extends AppCompatActivity {
 
         SharedPreferences sp = getSharedPreferences("appLogin",Context.MODE_PRIVATE);
         String email = sp.getString("email", "abcd");
+        User user = new User();
+        user.setEmail(email);
+        UserDAO udao = new UserDAO(getApplicationContext(), user);
+        user = udao.obterUserByEmail();
         txtEmail.setText(email);
 
 

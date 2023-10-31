@@ -17,7 +17,7 @@ import com.danieloliveira.login.model.User;
 
 public class MainActivity extends AppCompatActivity {
     EditText edtEmail, edtsenha;
-    Button btnEntra;
+    Button btnEntra, btnCadastrar;
 
     UserDAO uDAO;
     @Override
@@ -28,6 +28,15 @@ public class MainActivity extends AppCompatActivity {
         edtEmail = findViewById(R.id.edtEmail);
         edtsenha = findViewById(R.id.edtSenha);
         btnEntra = findViewById(R.id.btnEntrar);
+        btnCadastrar = findViewById(R.id.btnCadastrar);
+
+        btnCadastrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(it);
+            }
+        });
 
         btnEntra.setOnClickListener(new View.OnClickListener() {
             @Override

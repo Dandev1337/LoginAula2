@@ -111,7 +111,7 @@
         app:layout_constraintVertical_bias="0.2" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/cadastrar"
+        android:id="@+id/btnCadastrar"
         android:layout_width="165dp"
         android:layout_height="45dp"
         android:background="@drawable/bg_button"

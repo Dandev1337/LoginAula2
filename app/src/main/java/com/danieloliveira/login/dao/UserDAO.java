@@ -34,5 +34,22 @@ public class UserDAO {
 
         return false;
     }
+    public User obterUserByEmail(){
+        SQLiteDatabase dbLite = this.db.getReadableDatabase();
+        String sql = "SELECT * FROM user where email = ?;";
+
+        Cursor c = dbLite.rawQuery(sql, new String[]{this.user.getEmail()});
+
+        if(c != null){
+            c.moveToFirst();
+        }
+
+        this.user.setEmail(c.getString(0));
+        this.user.setSenha(c.getString(1));
+        this.user.setNome(c.getString(2));
+
+        return this.user;
+    }
+
 
 }
