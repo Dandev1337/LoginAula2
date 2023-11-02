@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(MainActivity.this, MainActivity2.class);
+                Intent it = new Intent(MainActivity.this, Cadastro.class);
                 startActivity(it);
             }
         });
@@ -52,18 +52,12 @@ public class MainActivity extends AppCompatActivity {
                         edtsenha.getText().toString()));
 
                 if(uDAO.verificarEmailSenha()){
-                Intent redirecionar = new Intent(MainActivity.this, MainActivity2.class);
+                Intent redirecionar = new Intent(MainActivity.this, SplashActivity.class);
                 startActivity(redirecionar);
 
                 }else {
                     Toast.makeText(MainActivity.this, "Dados Incorretos", Toast.LENGTH_SHORT).show();
                 }
-
-
-                //redirecionar.putExtra("email", edtEmail.getText().toString());
-
-
-
 
             }
         });

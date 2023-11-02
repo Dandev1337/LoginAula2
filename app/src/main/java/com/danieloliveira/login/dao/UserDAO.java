@@ -1,9 +1,12 @@
 package com.danieloliveira.login.dao;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.Toast;
 
+import com.danieloliveira.login.activity.Cadastro;
 import com.danieloliveira.login.helper.DBhelper;
 import com.danieloliveira.login.model.User;
 
@@ -49,6 +52,35 @@ public class UserDAO {
         this.user.setNome(c.getString(2));
 
         return this.user;
+    }
+
+    public boolean userExists(String email) {
+        SQLiteDatabase dbLite = this.db.getReadableDatabase();
+        Cursor cursor = null;
+
+        try {
+            String query = "SELECT * FROM user WHERE email = ?";
+            cursor = dbLite.rawQuery(query, new String[]{email});
+            return cursor.getCount() > 0;
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+            db.close();
+        }
+    }
+
+    public boolean insertUser(User user) {
+        SQLiteDatabase dbLite = this.db.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put("email", user.getEmail());
+        values.put("senha", user.getSenha());
+        values.put("nome", user.getNome());
+
+        long result = dbLite.insert("user", null, values);
+
+        return result != -1;
     }
 
 

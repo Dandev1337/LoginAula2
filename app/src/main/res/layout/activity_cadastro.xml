@@ -5,7 +5,6 @@
     android:id="@+id/btnCad"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backlogin"
     tools:context=".activity.MainActivity">
 
 
@@ -85,7 +84,7 @@
         android:layout_marginEnd="44dp"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/btnCadastro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtSenhaCad"
         app:layout_constraintVertical_bias="0.0" />
@@ -103,9 +102,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/btnCadastro"
+        android:layout_width="159dp"
+        android:layout_height="52dp"
         android:layout_marginBottom="124dp"
         android:background="@drawable/bg_button"
         android:text="Cadastre-se"
